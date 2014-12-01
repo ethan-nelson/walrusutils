@@ -1,0 +1,1 @@
+SUBROUTINE INTCALC(a,b,c,d)
