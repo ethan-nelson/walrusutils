@@ -1,0 +1,41 @@
+\documentclass{article}
+
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{tikz}
+
+\begin{document}
+
+\begin{proof}
+  Let $a,b \in \mathbb{R} ^2$ where $a = (x_1,y_1)$, $b = (x_2,y_2)$, and $x_1 \neq x_2$. So,
+  \begin{align*}
+    (y-y_1) &= m (x-x_1), &&    m = \frac{y_2-y_1}{x_2-x_1} \\
+    y &= \frac{y_2-y_1}{x_2-x_1} (x - x_1) + y_1&& \text{(combining equations)} \\
+    &= \frac{y_2-y_1}{x_2-x_1}x - \frac{x_1 y_2 - x_1 y_1}{x_2 - x_1} + y_1 \\
+    &= \frac{y_2-y_1}{x_2-x_1}x - \frac{x_1 y_2 - x_1 y_1}{x_2 - x_1} + \frac{x_2 - x_1}{x_2 - x_1}y_1 \\
+    &= \frac{y_2-y_1}{x_2-x_1}x - \frac{x_1 y_2 - x_1 y_1}{x_2 - x_1} + \frac{x_2 y_1 - x_1 y_1}{x_2 - x_1} \\
+    &= \frac{y_2-y_1}{x_2-x_1}x + \frac{- x_1 y_2 + x_1 y_1 + x_2 y_1 - x_1 y_1}{x_2 - x_1} \\
+    &= \frac{(y_2-y_1)x + x_2 y_1 - x_1 y_2}{x_2 - x_1} && \qedhere
+  \end{align*}
+\end{proof}
+
+\begin{tikzpicture}
+\clip (-4,-4) rectangle (4,4);
+\draw[latex-latex, thin, draw=gray] (-4,0) -- (4,0) node [right] {$x$};
+\draw[latex-latex, thin, draw=gray] (0,-4) -- (0,4) node [above] {$y$};
+\node[label={$a$}] at (-2,3) {\textbullet} ;
+\draw[thick, draw=black] (-2,-0.15) -- (-2,0.15);
+\node at (-2,-0.4) {$x_1$};
+\draw[thick, draw=black] (-0.15,3) -- (0.15,3) node [right] {$y_1$};
+\node[label={$b$}] at (2,-2) {\textbullet};
+\draw[thick, draw=black] (2,-0.15) -- (2,0.15);
+\node at (2,-0.4) {$x_2$};
+\draw[thick, draw=black] (-0.15,-2) -- (0.15,-2) node [right] {$y_2$};
+\draw[thick, dotted] (-0.7,-0.15) -- (-0.7,0.15);
+\node at (-0.7,-0.4) {$x$};
+\draw[thick, dotted] (0.15,1.4) -- (-0.15,1.4) node [left] {$y$};
+\draw[thick, draw=black] (-6,8) -- (6,-7); 
+\node at (2.25,1.5) {$y = \frac{(y_2-y_1)x + x_2 y_1-x_1 y_2}{x_2-x_1}$};
+\draw[->,draw] (1.7,1.2) -- (0.25,0.25);
+\end{tikzpicture}
+
+\end{document}
