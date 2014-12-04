@@ -46,12 +46,12 @@ IF ((i < nht) .AND. (index == 0)) THEN
 END IF
 
 IF (index >= 1) THEN ! If profile was initially < b
-   d = (/revarr(index), revheights(index)/)
-   e = (/revarr(index+1), revheights(index+1)/)
+   d = (/reva(index), revh(index)/)
+   e = (/reva(index+1), revh(index+1)/)
    CALL INTCALC(a,b,intersect,e)
 ELSE IF (index2 >= 1) THEN ! If profile was initially > b
-   d = (/revarr(index2), revheights(index2)/)
-   e = (/revarr(index2+1), revheights(index2+1)/)
+   d = (/reva(index2), revh(index2)/)
+   e = (/reva(index2+1), rev(index2+1)/)
    CALL INTCALC(d,e,b,c)
  ELSE
    e = -999
