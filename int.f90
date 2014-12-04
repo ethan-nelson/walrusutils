@@ -23,8 +23,7 @@ IMPLICIT NONE
 INTEGER :: i, index, index2
 REAL(8), INTENT(IN) :: a(nph), b
 REAL(8), INTENT(OUT) :: c
-REAL(8) :: d(2), e(2), f(2), g(2), h, i(2)
-REAL(8) :: revh(nph), reva(nph)
+REAL(8) :: d(2), e(2), revh(nph), reva(nph)
 
 revh = heights(nph:1:-1)
 reva = a(nph:1:-1)
@@ -54,7 +53,7 @@ ELSE IF (index2 >= 1) THEN ! If profile was initially > b
    e = (/reva(index2+1), rev(index2+1)/)
    CALL INTCALC(d,e,b,c)
  ELSE
-   e = -999
+   c = -999
    PRINT *,'ERROR DETECTED IN INTERSECT.'
 END
 
